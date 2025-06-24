@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chat Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar with contacts -->
+        <div class="sidebar" id="sidebar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search contacts...">
+            </div>
+            
+            <div class="user-list">
+                <div class="user-item active">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <div class="user-name">John Doe</div>
+                        <div class="user-status">
+                            <span class="status-dot status-online"></span>
+                            Online
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-item">
+                    <div class="user-avatar">AS</div>
+                    <div class="user-details">
+                        <div class="user-name">Alice Smith</div>
+                        <div class="user-status">
+                            <span class="status-dot status-online"></span>
+                            Online
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-item">
+                    <div class="user-avatar">RJ</div>
+                    <div class="user-details">
+                        <div class="user-name">Robert Johnson</div>
+                        <div class="user-status">
+                            <span class="status-dot status-away"></span>
+                            Away
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-item">
+                    <div class="user-avatar">MB</div>
+                    <div class="user-details">
+                        <div class="user-name">Maria Brown</div>
+                        <div class="user-status">
+                            <span class="status-dot status-offline"></span>
+                            Offline
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-item">
+                    <div class="user-avatar">DW</div>
+                    <div class="user-details">
+                        <div class="user-name">David Wilson</div>
+                        <div class="user-status">
+                            <span class="status-dot status-online"></span>
+                            Online
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="current-user">
+                <div class="user-avatar">ME</div>
+                <div class="user-details">
+                    <div class="user-name">You</div>
+                    <div class="user-status">
+                        <span class="status-dot status-online"></span>
+                        Online
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main chat area -->
+        <div class="chat-area" id="chatArea">
+            <div class="chat-header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <div class="chat-header-title">
+                    <h2 class="font-semibold">John Doe</h2>
+                    <p class="text-sm text-gray-500">Online</p>
+                </div>
+                <div class="chat-header-actions">
+                    <button class="chat-header-action-btn">📞</button>
+                    <button class="chat-header-action-btn">🖥️</button>
+                    <button class="chat-header-action-btn">⋮</button>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <span>John is typing...</span>
+                </div>
+                
+                <div class="message received">
+                    <div class="message-actions">
+                        <button class="message-action-btn">↩️</button>
+                        <button class="message-action-btn">🗑️</button>
+                    </div>
+                    Hey there! How are you doing today?
+                    <div class="message-info">
+                        <span>John Doe</span>
+                        <span class="message-time">10:30 AM</span>
+                    </div>
+                </div>
+                
+                <div class="message sent">
+                    <div class="message-actions">
+                        <button class="message-action-btn">↩️</button>
+                        <button class="message-action-btn">🗑️</button>
+                    </div>
+                    I'm doing great! Just working on this new chat app.
+                    <div class="message-info">
+                        <span>You</span>
+                        <span class="message-time">10:32 AM</span>
+                    </div>
+                </div>
+                
+                <div class="message received">
+                    <div class="message-actions">
+                        <button class="message-action-btn">↩️</button>
+                        <button class="message-action-btn">🗑️</button>
+                    </div>
+                    That sounds awesome! Can you show me some screenshots?
+                    <div class="message-info">
+                        <span>John Doe</span>
+                        <span class="message-time">10:33 AM</span>
+                    </div>
+                </div>
+                
+                <div class="message sent">
+                    <div class="message-actions">
+                        <button class="message-action-btn">↩️</button>
+                        <button class="message-action-btn">🗑️</button>
+                    </div>
+                    Sure! Here's a preview:
+                    <div class="message-attachment">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="App screenshot">
+                    </div>
+                    <div class="message-info">
+                        <span>You</span>
+                        <span class="message-time">10:35 AM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <button class="attachment-btn" id="attachmentBtn">📎</button>
+                <button class="emoji-btn" id="emojiBtn">😊</button>
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendBtn">Send</button>
+                
+                <div class="emoji-picker" id="emojiPicker">
+                    <button class="emoji-picker-btn">😀</button>
+                    <button class="emoji-picker-btn">😂</button>
+                    <button class="emoji-picker-btn">😍</button>
+                    <button class="emoji-picker-btn">👍</button>
+                    <button class="emoji-picker-btn">👋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
